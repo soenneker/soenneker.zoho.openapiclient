@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the action type discriminator that identifies this as a FieldUpdateAssociate action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.</summary>
+    /// <summary>action type which needs to be executed. (Required)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FieldUpdatesType
     {

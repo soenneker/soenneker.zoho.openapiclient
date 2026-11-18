@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string _explicitNullValueMessage = default!;
 #endif
-        /// <summary>Indicates the response status.</summary>
+        /// <summary>Represents the status of the API response.Possible values:**error** - The request could not be processed because the weeks value exceeds the allowed maximum.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? _explicitNullValueStatus = default!;
         /// <summary>

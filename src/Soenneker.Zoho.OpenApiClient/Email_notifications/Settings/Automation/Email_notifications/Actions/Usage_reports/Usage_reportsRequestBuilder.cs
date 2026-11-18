@@ -111,7 +111,7 @@ namespace Soenneker.Zoho.OpenApiClient.Email_notifications.Settings.Automation.E
             public int? PerPage { get; set; }
             /// <summary>Specify the sort order for the results.Possible values:desc - Sorts the results in descending order.asc - Sorts the results in ascending order.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Models.ParamQuerySortOrder? SortOrder { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsParamQuerySortOrder? SortOrder { get; set; }
             /// <summary>Specify the end date (inclusive) for the query range in YYYY-MM-DD format. Evaluated in the organization&apos;s time zone. Defaults to the current date at 23:59:59 when omitted. Future dates return a 400 error with the code INVALID_DATA and the message &apos;provided_time_is_ahead&apos;.</summary>
             [QueryParameter("to")]
             public Date? To { get; set; }

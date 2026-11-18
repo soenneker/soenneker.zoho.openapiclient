@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates the error message describing the permission error.Possible values:permission denied - The user does not have the required permission to delete users.You can&apos;t perform this action over a closed/deleted user - The target user account is closed or already deleted.User deletion is not allowed for the org because of CrmKeyValue entry RESTRICT_USER_DELETION_FOR_THE_ORG &amp; deleted users count exceeded 10 - The organization has reached the maximum limit for user deletions.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UsersDeleteUser403ResponseMessage? MessageEscaped { get => _explicitNullValueMessageEscaped; set { _explicitNullValueMessageEscaped = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.UsersDeleteUser403ResponseMessage? _explicitNullValueMessageEscaped = default!;
-        /// <summary>Indicates the response status.</summary>
+        /// <summary>Represents the status of the API response.Possible values:**error** - The request could not be processed because the weeks value exceeds the allowed maximum.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? _explicitNullValueStatus = default!;
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "code", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersDeleteUser403ResponseCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCode = default; _explicitNullProperties?.Remove("code"); AdditionalData["code"] = unknown; } else { Code = parsed; AdditionalData.Remove("code"); } } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersDeleteUser403ResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.UsersDeleteUser403ResponseDetails.CreateFromDiscriminatorValue); } },

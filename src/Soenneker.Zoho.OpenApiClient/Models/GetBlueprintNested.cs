@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Nested schema for Blueprint configurations.
+    /// Represents the Blueprint details of a record, including the transitions currently available in its active Blueprint process.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetBlueprintNested : IAdditionalDataHolder, IParsable
@@ -18,21 +18,33 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("3060320000000666022") is null) { _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = default!; _explicitNullProperties?.Remove("3060320000000666022"); }
-            else if (parseNode.GetChildNode("3060320000000666022") is { } nullNodeThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo && nullNodeThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = null;
+            if (parseNode.GetChildNode("process_info") is null) { _explicitNullValueProcessInfo = default!; _explicitNullProperties?.Remove("process_info"); }
+            else if (parseNode.GetChildNode("process_info") is { } nullNodeProcessInfo && nullNodeProcessInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessInfo = null;
+            if (parseNode.GetChildNode("transitions") is null) { _explicitNullValueTransitions = default!; _explicitNullProperties?.Remove("transitions"); }
+            else if (parseNode.GetChildNode("transitions") is { } nullNodeTransitions && nullNodeTransitions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transitions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Nested schema for tag ID 3060320000000666022 configurations.</summary>
+        /// <summary>Represents the process information of the Blueprint the record is currently in, including its ID, name, continuity, escalation details, the primary field on which the Blueprint is based, and the field&apos;s current value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1? ThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo { get => _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo; set { _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = value; AdditionalData?.Remove("3060320000000666022"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3060320000000666022"); else _explicitNullProperties?.Remove("3060320000000666022"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1? _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetProcessInfoNested? ProcessInfo { get => _explicitNullValueProcessInfo; set { _explicitNullValueProcessInfo = value; AdditionalData?.Remove("process_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("process_info"); else _explicitNullProperties?.Remove("process_info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetProcessInfoNested? _explicitNullValueProcessInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1 ThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo { get => _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo; set { _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = value; AdditionalData?.Remove("3060320000000666022"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3060320000000666022"); else _explicitNullProperties?.Remove("3060320000000666022"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1 _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetProcessInfoNested ProcessInfo { get => _explicitNullValueProcessInfo; set { _explicitNullValueProcessInfo = value; AdditionalData?.Remove("process_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("process_info"); else _explicitNullProperties?.Remove("process_info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetProcessInfoNested _explicitNullValueProcessInfo = default!;
+#endif
+        /// <summary>List of transitions currently available for the record in its active Blueprint process. Each transition includes its ID, name, criteria match details, and the fields required to execute it.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetTransitionsNested>? Transitions { get => _explicitNullValueTransitions; set { _explicitNullValueTransitions = value; AdditionalData?.Remove("transitions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transitions"); else _explicitNullProperties?.Remove("transitions"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.GetTransitionsNested>? _explicitNullValueTransitions = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetTransitionsNested> Transitions { get => _explicitNullValueTransitions; set { _explicitNullValueTransitions = value; AdditionalData?.Remove("transitions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transitions"); else _explicitNullProperties?.Remove("transitions"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.GetTransitionsNested> _explicitNullValueTransitions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetBlueprintNested"/> and sets the default values.
@@ -59,7 +71,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "3060320000000666022", n => { ThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1>(global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1.CreateFromDiscriminatorValue); } },
+                { "process_info", n => { ProcessInfo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetProcessInfoNested>(global::Soenneker.Zoho.OpenApiClient.Models.GetProcessInfoNested.CreateFromDiscriminatorValue); } },
+                { "transitions", n => { Transitions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetTransitionsNested>(global::Soenneker.Zoho.OpenApiClient.Models.GetTransitionsNested.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -69,7 +82,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1>("3060320000000666022", ThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetProcessInfoNested>("process_info", ProcessInfo);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetTransitionsNested>("transitions", Transitions);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

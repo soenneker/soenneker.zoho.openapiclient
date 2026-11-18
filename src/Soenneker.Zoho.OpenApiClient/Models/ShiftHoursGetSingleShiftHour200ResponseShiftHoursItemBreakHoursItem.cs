@@ -98,7 +98,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "break_days", n => { BreakDays = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "custom_timing", n => { CustomTiming = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemBreakHoursItemCustomTimingItem>(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemBreakHoursItemCustomTimingItem.CreateFromDiscriminatorValue)?.AsList(); } },

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>The error message describing the issue. Possible values: **One of the expected parameter is missing** - Indicates that a required parameter was not included in the request.</summary>
+    /// <summary>Represents the error message indicating that a required parameter is missing from the request.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OneOfTheExpectedParameterIsMissingMessage
     {

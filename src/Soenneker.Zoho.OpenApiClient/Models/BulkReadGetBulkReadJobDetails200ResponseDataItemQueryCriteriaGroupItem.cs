@@ -91,7 +91,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "comparator", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadGetBulkReadJobDetails200ResponseDataItemQueryCriteriaGroupItemComparator>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueComparator = default; _explicitNullProperties?.Remove("comparator"); AdditionalData["comparator"] = unknown; } else { Comparator = parsed; AdditionalData.Remove("comparator"); } } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadGetBulkReadJobDetails200ResponseDataItemQueryCriteriaGroupItemField>(global::Soenneker.Zoho.OpenApiClient.Models.BulkReadGetBulkReadJobDetails200ResponseDataItemQueryCriteriaGroupItemField.CreateFromDiscriminatorValue); } },

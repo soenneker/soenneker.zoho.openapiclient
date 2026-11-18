@@ -228,7 +228,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(17)
             {
                 { "Created_By", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectCreatedBy.CreateFromDiscriminatorValue); } },
                 { "Created_Time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },

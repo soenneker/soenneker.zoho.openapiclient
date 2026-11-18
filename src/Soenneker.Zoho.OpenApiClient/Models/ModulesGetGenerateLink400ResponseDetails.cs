@@ -24,7 +24,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the param name returned for the Assignment Rule operation.Possible values:**module** - Represents module. </summary>
+        /// <summary>Detail field: module</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ModuleParamName? ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; AdditionalData?.Remove("param_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModuleParamName? _explicitNullValueParamName = default!;
         /// <summary>

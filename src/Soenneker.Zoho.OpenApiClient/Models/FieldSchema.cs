@@ -804,7 +804,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(79)
             {
                 { "additional_column", n => { AdditionalColumn = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAdditionalColumn>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAdditionalColumn.CreateFromDiscriminatorValue); } },
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAddress>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAddress.CreateFromDiscriminatorValue); } },

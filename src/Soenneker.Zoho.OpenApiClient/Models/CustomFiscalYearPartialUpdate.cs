@@ -83,7 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "display_based_on", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearDisplayBasedOnForCustom>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDisplayBasedOn = default; _explicitNullProperties?.Remove("display_based_on"); AdditionalData["display_based_on"] = unknown; } else { DisplayBasedOn = parsed; AdditionalData.Remove("display_based_on"); } } },
                 { "interval_display_option", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearIntervalDisplayOption>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIntervalDisplayOption = default; _explicitNullProperties?.Remove("interval_display_option"); AdditionalData["interval_display_option"] = unknown; } else { IntervalDisplayOption = parsed; AdditionalData.Remove("interval_display_option"); } } },

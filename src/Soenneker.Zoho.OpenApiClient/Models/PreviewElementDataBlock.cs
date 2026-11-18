@@ -98,7 +98,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "get_record", n => { GetRecord = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PreviewGetRecordConfig>(global::Soenneker.Zoho.OpenApiClient.Models.PreviewGetRecordConfig.CreateFromDiscriminatorValue); } },
                 { "get_record_data", n => { GetRecordData = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PreviewElementDataBlockGetRecordDataItem>(global::Soenneker.Zoho.OpenApiClient.Models.PreviewElementDataBlockGetRecordDataItem.CreateFromDiscriminatorValue)?.AsList(); } },

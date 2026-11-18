@@ -80,7 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesDeleteWorkflowRulesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesDeleteWorkflowRulesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve the list of workflow rules configured in your Zoho CRM organization, including their trigger conditions, module associations, and action configurations. By default, each rule includes only summary-level data; set the `include_inner_details` parameter to `true` to include full condition criteria and action configurations in the response. Results are paginated and can be filtered by module, activation status, trigger type, or rule name.
+        /// To retrieve the list of workflow rules configured in your Zoho CRM organization, including their trigger conditions, module associations, and action configurations. By default, each rule includes only summary-level data; use the `include_inner_details` parameter to include the `conditions` array with its criteria and action configurations in the response. Results are paginated and can be filtered by module, activation status, trigger type, or rule name.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGetResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -184,7 +184,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return requestInfo;
         }
         /// <summary>
-        /// To retrieve the list of workflow rules configured in your Zoho CRM organization, including their trigger conditions, module associations, and action configurations. By default, each rule includes only summary-level data; set the `include_inner_details` parameter to `true` to include full condition criteria and action configurations in the response. Results are paginated and can be filtered by module, activation status, trigger type, or rule name.
+        /// To retrieve the list of workflow rules configured in your Zoho CRM organization, including their trigger conditions, module associations, and action configurations. By default, each rule includes only summary-level data; use the `include_inner_details` parameter to include the `conditions` array with its criteria and action configurations in the response. Results are paginated and can be filtered by module, activation status, trigger type, or rule name.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -273,7 +273,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
 #endif
         }
         /// <summary>
-        /// To retrieve the list of workflow rules configured in your Zoho CRM organization, including their trigger conditions, module associations, and action configurations. By default, each rule includes only summary-level data; set the `include_inner_details` parameter to `true` to include full condition criteria and action configurations in the response. Results are paginated and can be filtered by module, activation status, trigger type, or rule name.
+        /// To retrieve the list of workflow rules configured in your Zoho CRM organization, including their trigger conditions, module associations, and action configurations. By default, each rule includes only summary-level data; use the `include_inner_details` parameter to include the `conditions` array with its criteria and action configurations in the response. Results are paginated and can be filtered by module, activation status, trigger type, or rule name.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Workflow_rulesRequestBuilderGetQueryParameters 
@@ -298,9 +298,16 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             [QueryParameter("filter")]
             public string Filter { get; set; }
 #endif
-            /// <summary>When set to true, includes full condition details, criteria, and action configurations in the response. Defaults to false.</summary>
+            /// <summary>Includes the `conditions` array with its criteria and action configurations in the response. Pass the complete list of keys, separated by commas: `conditions,conditions.instant_actions,conditions.criteria_details,conditions.scheduled_actions`. Omit this parameter to return only summary-level rule details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("include_inner_details")]
-            public bool? IncludeInnerDetails { get; set; }
+            public string? IncludeInnerDetails { get; set; }
+#nullable restore
+#else
+            [QueryParameter("include_inner_details")]
+            public string IncludeInnerDetails { get; set; }
+#endif
             /// <summary>Specifies the CRM module API name to filter workflow rules by, such as Leads, Contacts, or Deals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

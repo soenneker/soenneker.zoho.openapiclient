@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**REQUIRED_PARAM_MISSING** - Represents required param missing.</summary>
+    /// <summary>Represents the error code returned when a required query parameter is missing from the request.Possible values:**REQUIRED_PARAM_MISSING** - A required parameter is absent from the request.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RequiredParamMissingCode
     {

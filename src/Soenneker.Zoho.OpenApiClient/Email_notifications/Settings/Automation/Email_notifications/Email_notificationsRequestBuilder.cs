@@ -273,7 +273,7 @@ namespace Soenneker.Zoho.OpenApiClient.Email_notifications.Settings.Automation.E
             public global::Soenneker.Zoho.OpenApiClient.Models.ModifiedTimeSortBy? SortBy { get; set; }
             /// <summary>Specify the sort order for the results.Possible values:desc - Sorts the results in descending order.asc - Sorts the results in ascending order.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Models.ParamQuerySortOrder? SortOrder { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsParamQuerySortOrder? SortOrder { get; set; }
         }
     }
 }

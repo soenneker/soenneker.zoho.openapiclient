@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the error code for this response.</summary>
+    /// <summary>Represents the error code returned when the requested operation is not allowed.Possible values:**NOT_ALLOWED** - The operation cannot be performed in the current state.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NotAllowedCode
     {

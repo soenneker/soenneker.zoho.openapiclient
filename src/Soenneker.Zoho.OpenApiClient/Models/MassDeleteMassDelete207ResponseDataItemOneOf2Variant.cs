@@ -27,7 +27,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
         }
 
-        /// <summary>Represents the error code for this response.</summary>
+        /// <summary>Represents the error code returned when the number of weeks specified exceeds the allowed maximum.Possible values:**INVALID_DATA** - The weeks value is greater than the allowed maximum of 12.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataCode? _explicitNullValueCode = default!;
         /// <summary>Contains the details of the record that failed deletion, including the record ID. </summary>

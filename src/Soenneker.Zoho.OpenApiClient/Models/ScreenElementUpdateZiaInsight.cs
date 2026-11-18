@@ -96,7 +96,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "component_name", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScreenZiaInsightComponentName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueComponentName = default; _explicitNullProperties?.Remove("component_name"); AdditionalData["component_name"] = unknown; } else { ComponentName = parsed; AdditionalData.Remove("component_name"); } } },

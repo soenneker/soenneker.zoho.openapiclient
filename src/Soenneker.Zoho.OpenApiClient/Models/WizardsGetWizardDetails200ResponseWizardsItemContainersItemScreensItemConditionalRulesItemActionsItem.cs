@@ -36,7 +36,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the list of client portal user types that are exempted from the conditional rule action on the screen.</summary>
+        /// <summary>Present only when `type` is `set_lock`. Represents the list of client portal user types that are allowed to edit the field even after it is locked by the conditional rule action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItemActionsItemExemptedPortalUserTypesItem>? ExemptedPortalUserTypes { get => _explicitNullValueExemptedPortalUserTypes; set { _explicitNullValueExemptedPortalUserTypes = value; AdditionalData?.Remove("exempted_portal_user_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exempted_portal_user_types"); else _explicitNullProperties?.Remove("exempted_portal_user_types"); } }
@@ -46,7 +46,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItemActionsItemExemptedPortalUserTypesItem> ExemptedPortalUserTypes { get => _explicitNullValueExemptedPortalUserTypes; set { _explicitNullValueExemptedPortalUserTypes = value; AdditionalData?.Remove("exempted_portal_user_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exempted_portal_user_types"); else _explicitNullProperties?.Remove("exempted_portal_user_types"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItemActionsItemExemptedPortalUserTypesItem> _explicitNullValueExemptedPortalUserTypes = default!;
 #endif
-        /// <summary>Represents the list of CRM profiles that are exempted from the conditional rule action and will not have the action applied to them.</summary>
+        /// <summary>Present only when `type` is `set_lock`. Represents the list of CRM profiles that are allowed to edit the field even after it is locked by the conditional rule action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItemActionsItemExemptedProfilesItem>? ExemptedProfiles { get => _explicitNullValueExemptedProfiles; set { _explicitNullValueExemptedProfiles = value; AdditionalData?.Remove("exempted_profiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exempted_profiles"); else _explicitNullProperties?.Remove("exempted_profiles"); } }
@@ -129,7 +129,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "exempted_portal_user_types", n => { ExemptedPortalUserTypes = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItemActionsItemExemptedPortalUserTypesItem>(global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItemActionsItemExemptedPortalUserTypesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "exempted_profiles", n => { ExemptedProfiles = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItemActionsItemExemptedProfilesItem>(global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItemActionsItemExemptedProfilesItem.CreateFromDiscriminatorValue)?.AsList(); } },

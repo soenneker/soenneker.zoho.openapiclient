@@ -30,7 +30,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**LIMIT_EXCEEDED** - Represents limit exceeded.</summary>
+        /// <summary>Represents the error code returned when the AB testing limit has been exceeded.Possible values:**LIMIT_EXCEEDED** - The maximum number of allowed AB tests has been reached.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededCode? _explicitNullValueCode = default!;
         /// <summary>Represents the details providing validation context for the error.</summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the error message describing that the number of member associations exceeds the allowed limit.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.MoreThan100UsersCannotBeAssociatedMessage? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MoreThan100UsersCannotBeAssociatedMessage? _explicitNullValueMessage = default!;
-        /// <summary>Indicates the response status.</summary>
+        /// <summary>Represents the status of the API response.Possible values:**error** - The request could not be processed because the weeks value exceeds the allowed maximum.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? _explicitNullValueStatus = default!;
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "code", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCode = default; _explicitNullProperties?.Remove("code"); AdditionalData["code"] = unknown; } else { Code = parsed; AdditionalData.Remove("code"); } } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MembersAssociationLimitExceededErrorDetails>(global::Soenneker.Zoho.OpenApiClient.Models.MembersAssociationLimitExceededErrorDetails.CreateFromDiscriminatorValue); } },

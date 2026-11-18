@@ -192,7 +192,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "account_rule_criteria", n => { AccountRuleCriteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteria.CreateFromDiscriminatorValue); } },
                 { "api_name", n => { ApiName = n.GetStringValue(); } },

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>The error message describing the issue. Possible values: **Invalid data type** - The value provided for the field does not match the expected data type.</summary>
+    /// <summary>Represents the error message indicating that the field value has an invalid data type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum InvalidDataTypeMessage
     {

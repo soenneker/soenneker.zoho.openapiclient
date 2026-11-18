@@ -36,7 +36,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeDefaultAssigneeRequestObjectResource Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; AdditionalData?.Remove("resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.UserTypeDefaultAssigneeRequestObjectResource _explicitNullValueResource = default!;
 #endif
-        /// <summary>Defines the type of the default assignee.Possible values:**user** - Represents user.</summary>
+        /// <summary>Recipient type. Must be user.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UserType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.UserType? _explicitNullValueType = default!;
         /// <summary>

@@ -105,7 +105,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "based_on_module", n => { BasedOnModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1BasedOnModule>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1BasedOnModule.CreateFromDiscriminatorValue); } },
                 { "expression", n => { Expression = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1Expression>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1Expression.CreateFromDiscriminatorValue); } },

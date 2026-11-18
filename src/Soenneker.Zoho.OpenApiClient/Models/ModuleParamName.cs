@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the param name returned for the Assignment Rule operation.Possible values:**module** - Represents module. </summary>
+    /// <summary>Detail field: module</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ModuleParamName
     {

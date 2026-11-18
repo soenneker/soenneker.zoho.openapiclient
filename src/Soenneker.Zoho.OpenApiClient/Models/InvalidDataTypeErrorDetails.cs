@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the error details identifying the field and its dependent field that caused the configuration conflict.
+    /// Contains the error details object with field-level validation information about the invalid data failure.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InvalidDataTypeErrorDetails : IAdditionalDataHolder, IParsable
@@ -20,15 +20,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("api_name") is null) { _explicitNullValueApiName = default!; _explicitNullProperties?.Remove("api_name"); }
             else if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
-            if (parseNode.GetChildNode("dependee") is null) { _explicitNullValueDependee = default!; _explicitNullProperties?.Remove("dependee"); }
-            else if (parseNode.GetChildNode("dependee") is { } nullNodeDependee && nullNodeDependee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dependee = null;
+            if (parseNode.GetChildNode("expected_data_type") is null) { _explicitNullValueExpectedDataType = default!; _explicitNullProperties?.Remove("expected_data_type"); }
+            else if (parseNode.GetChildNode("expected_data_type") is { } nullNodeExpectedDataType && nullNodeExpectedDataType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedDataType = null;
             if (parseNode.GetChildNode("json_path") is null) { _explicitNullValueJsonPath = default!; _explicitNullProperties?.Remove("json_path"); }
             else if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the API name of the field that caused the dependency conflict.</summary>
+        /// <summary>Represents the API name of the field whose value has an invalid data type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
@@ -38,17 +38,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string _explicitNullValueApiName = default!;
 #endif
-        /// <summary>Represents the dependent field whose configuration conflicts with the primary field identified in the error.</summary>
+        /// <summary>Indicates the data type expected for the field whose value failed data type validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeErrorDetailsDependee? Dependee { get => _explicitNullValueDependee; set { _explicitNullValueDependee = value; AdditionalData?.Remove("dependee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependee"); else _explicitNullProperties?.Remove("dependee"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeErrorDetailsDependee? _explicitNullValueDependee = default!;
+        public string? ExpectedDataType { get => _explicitNullValueExpectedDataType; set { _explicitNullValueExpectedDataType = value; AdditionalData?.Remove("expected_data_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_data_type"); else _explicitNullProperties?.Remove("expected_data_type"); } }
+        private string? _explicitNullValueExpectedDataType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeErrorDetailsDependee Dependee { get => _explicitNullValueDependee; set { _explicitNullValueDependee = value; AdditionalData?.Remove("dependee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependee"); else _explicitNullProperties?.Remove("dependee"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeErrorDetailsDependee _explicitNullValueDependee = default!;
+        public string ExpectedDataType { get => _explicitNullValueExpectedDataType; set { _explicitNullValueExpectedDataType = value; AdditionalData?.Remove("expected_data_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_data_type"); else _explicitNullProperties?.Remove("expected_data_type"); } }
+        private string _explicitNullValueExpectedDataType = default!;
 #endif
-        /// <summary>Represents the JSON path to the field within the request payload that caused the dependency conflict.</summary>
+        /// <summary>Represents the JSON path of the field whose value has an invalid data type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
@@ -84,7 +84,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "dependee", n => { Dependee = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeErrorDetailsDependee>(global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeErrorDetailsDependee.CreateFromDiscriminatorValue); } },
+                { "expected_data_type", n => { ExpectedDataType = n.GetStringValue(); } },
                 { "json_path", n => { JsonPath = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeErrorDetailsDependee>("dependee", Dependee);
+            writer.WriteStringValue("expected_data_type", ExpectedDataType);
             writer.WriteStringValue("json_path", JsonPath);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

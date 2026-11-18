@@ -110,7 +110,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "api_name", n => { ApiName = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1ApiName>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1ApiName.CreateFromDiscriminatorValue); } },
                 { "display_label", n => { DisplayLabel = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1DisplayLabel>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1DisplayLabel.CreateFromDiscriminatorValue); } },

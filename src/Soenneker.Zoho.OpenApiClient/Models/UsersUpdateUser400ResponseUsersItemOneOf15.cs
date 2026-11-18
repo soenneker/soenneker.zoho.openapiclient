@@ -46,7 +46,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates the error message when conflicting reporting manager data is found. Possible values: **the user must be updated with new eligible reporting manager because of changing user role**, **the user must be updated with new eligible reporting manager and the subordinates who are going to report to a user in a role below them, because of new role change are need to transfer to new eligible reporting manager**.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf15Message? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf15Message? _explicitNullValueMessage = default!;
-        /// <summary>Indicates the response status.</summary>
+        /// <summary>Represents the status of the API response.Possible values:**error** - The request could not be processed because the weeks value exceeds the allowed maximum.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? _explicitNullValueStatus = default!;
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "code", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ConflictingDataFoundCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCode = default; _explicitNullProperties?.Remove("code"); AdditionalData["code"] = unknown; } else { Code = parsed; AdditionalData.Remove("code"); } } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf15Details>(global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf15Details.CreateFromDiscriminatorValue); } },

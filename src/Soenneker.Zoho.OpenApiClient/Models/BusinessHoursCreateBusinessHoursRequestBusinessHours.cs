@@ -96,7 +96,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "business_days", n => { BusinessDays = n.GetCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursBusinessDaysItem>()?.AsList(); } },
                 { "custom_timing", n => { CustomTiming = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursCustomTimingItem>(global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursCustomTimingItem.CreateFromDiscriminatorValue)?.AsList(); } },

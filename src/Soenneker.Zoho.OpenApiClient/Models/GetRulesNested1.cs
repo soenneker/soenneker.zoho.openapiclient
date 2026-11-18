@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Nested schema for rules within workflow, blueprint, or orchestration configurations.
+    /// Nested schema for rules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetRulesNested1 : IAdditionalDataHolder, IParsable
@@ -18,37 +18,83 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("execution_type") is null) { _explicitNullValueExecutionType = default!; _explicitNullProperties?.Remove("execution_type"); }
-            else if (parseNode.GetChildNode("execution_type") is { } nullNodeExecutionType && nullNodeExecutionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionType = null;
+            if (parseNode.GetChildNode("actions_per_approval") is null) { _explicitNullValueActionsPerApproval = default!; _explicitNullProperties?.Remove("actions_per_approval"); }
+            else if (parseNode.GetChildNode("actions_per_approval") is { } nullNodeActionsPerApproval && nullNodeActionsPerApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionsPerApproval = null;
+            if (parseNode.GetChildNode("actions_upon_final_approval") is null) { _explicitNullValueActionsUponFinalApproval = default!; _explicitNullProperties?.Remove("actions_upon_final_approval"); }
+            else if (parseNode.GetChildNode("actions_upon_final_approval") is { } nullNodeActionsUponFinalApproval && nullNodeActionsUponFinalApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionsUponFinalApproval = null;
+            if (parseNode.GetChildNode("actions_upon_rejection") is null) { _explicitNullValueActionsUponRejection = default!; _explicitNullProperties?.Remove("actions_upon_rejection"); }
+            else if (parseNode.GetChildNode("actions_upon_rejection") is { } nullNodeActionsUponRejection && nullNodeActionsUponRejection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionsUponRejection = null;
+            if (parseNode.GetChildNode("approver_stages") is null) { _explicitNullValueApproverStages = default!; _explicitNullProperties?.Remove("approver_stages"); }
+            else if (parseNode.GetChildNode("approver_stages") is { } nullNodeApproverStages && nullNodeApproverStages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApproverStages = null;
+            if (parseNode.GetChildNode("criteria") is null) { _explicitNullValueCriteria = default!; _explicitNullProperties?.Remove("criteria"); }
+            else if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("module") is null) { _explicitNullValueModule = default!; _explicitNullProperties?.Remove("module"); }
-            else if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
-            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
-            if (parseNode.GetChildNode("subtype") is null) { _explicitNullValueSubtype = default!; _explicitNullProperties?.Remove("subtype"); }
-            else if (parseNode.GetChildNode("subtype") is { } nullNodeSubtype && nullNodeSubtype.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtype = null;
-            if (parseNode.GetChildNode("subtype_id") is null) { _explicitNullValueSubtypeId = default!; _explicitNullProperties?.Remove("subtype_id"); }
-            else if (parseNode.GetChildNode("subtype_id") is { } nullNodeSubtypeId && nullNodeSubtypeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubtypeId = null;
-            if (parseNode.GetChildNode("subtype_name") is null) { _explicitNullValueSubtypeName = default!; _explicitNullProperties?.Remove("subtype_name"); }
-            else if (parseNode.GetChildNode("subtype_name") is { } nullNodeSubtypeName && nullNodeSubtypeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubtypeName = null;
+            if (parseNode.GetChildNode("overall_approval_type") is null) { _explicitNullValueOverallApprovalType = default!; _explicitNullProperties?.Remove("overall_approval_type"); }
+            else if (parseNode.GetChildNode("overall_approval_type") is { } nullNodeOverallApprovalType && nullNodeOverallApprovalType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverallApprovalType = null;
+            if (parseNode.GetChildNode("overall_stages_record_modification") is null) { _explicitNullValueOverallStagesRecordModification = default!; _explicitNullProperties?.Remove("overall_stages_record_modification"); }
+            else if (parseNode.GetChildNode("overall_stages_record_modification") is { } nullNodeOverallStagesRecordModification && nullNodeOverallStagesRecordModification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverallStagesRecordModification = null;
+            if (parseNode.GetChildNode("process_admin_configuration") is null) { _explicitNullValueProcessAdminConfiguration = default!; _explicitNullProperties?.Remove("process_admin_configuration"); }
+            else if (parseNode.GetChildNode("process_admin_configuration") is { } nullNodeProcessAdminConfiguration && nullNodeProcessAdminConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessAdminConfiguration = null;
+            if (parseNode.GetChildNode("sequence_number") is null) { _explicitNullValueSequenceNumber = default!; _explicitNullProperties?.Remove("sequence_number"); }
+            else if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
         }
 
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Execution type of the rule (e.g., instant, schedule)</summary>
+        /// <summary>Field: actions_per_approval</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExecutionType { get => _explicitNullValueExecutionType; set { _explicitNullValueExecutionType = value; AdditionalData?.Remove("execution_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_type"); else _explicitNullProperties?.Remove("execution_type"); } }
-        private string? _explicitNullValueExecutionType = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetActionsPerApprovalNested>? ActionsPerApproval { get => _explicitNullValueActionsPerApproval; set { _explicitNullValueActionsPerApproval = value; AdditionalData?.Remove("actions_per_approval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions_per_approval"); else _explicitNullProperties?.Remove("actions_per_approval"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.GetActionsPerApprovalNested>? _explicitNullValueActionsPerApproval = default!;
 #nullable restore
 #else
-        public string ExecutionType { get => _explicitNullValueExecutionType; set { _explicitNullValueExecutionType = value; AdditionalData?.Remove("execution_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_type"); else _explicitNullProperties?.Remove("execution_type"); } }
-        private string _explicitNullValueExecutionType = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetActionsPerApprovalNested> ActionsPerApproval { get => _explicitNullValueActionsPerApproval; set { _explicitNullValueActionsPerApproval = value; AdditionalData?.Remove("actions_per_approval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions_per_approval"); else _explicitNullProperties?.Remove("actions_per_approval"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.GetActionsPerApprovalNested> _explicitNullValueActionsPerApproval = default!;
 #endif
-        /// <summary>Unique identifier of the rule</summary>
+        /// <summary>Nested schema for actions_upon_final_approval</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponFinalApprovalNested1? ActionsUponFinalApproval { get => _explicitNullValueActionsUponFinalApproval; set { _explicitNullValueActionsUponFinalApproval = value; AdditionalData?.Remove("actions_upon_final_approval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions_upon_final_approval"); else _explicitNullProperties?.Remove("actions_upon_final_approval"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponFinalApprovalNested1? _explicitNullValueActionsUponFinalApproval = default!;
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponFinalApprovalNested1 ActionsUponFinalApproval { get => _explicitNullValueActionsUponFinalApproval; set { _explicitNullValueActionsUponFinalApproval = value; AdditionalData?.Remove("actions_upon_final_approval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions_upon_final_approval"); else _explicitNullProperties?.Remove("actions_upon_final_approval"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponFinalApprovalNested1 _explicitNullValueActionsUponFinalApproval = default!;
+#endif
+        /// <summary>Nested schema for actions_upon_rejection</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponRejectionNested1? ActionsUponRejection { get => _explicitNullValueActionsUponRejection; set { _explicitNullValueActionsUponRejection = value; AdditionalData?.Remove("actions_upon_rejection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions_upon_rejection"); else _explicitNullProperties?.Remove("actions_upon_rejection"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponRejectionNested1? _explicitNullValueActionsUponRejection = default!;
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponRejectionNested1 ActionsUponRejection { get => _explicitNullValueActionsUponRejection; set { _explicitNullValueActionsUponRejection = value; AdditionalData?.Remove("actions_upon_rejection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions_upon_rejection"); else _explicitNullProperties?.Remove("actions_upon_rejection"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponRejectionNested1 _explicitNullValueActionsUponRejection = default!;
+#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Field: approver_stages</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1ApproverStagesItem>? ApproverStages { get => _explicitNullValueApproverStages; set { _explicitNullValueApproverStages = value; AdditionalData?.Remove("approver_stages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approver_stages"); else _explicitNullProperties?.Remove("approver_stages"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1ApproverStagesItem>? _explicitNullValueApproverStages = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1ApproverStagesItem> ApproverStages { get => _explicitNullValueApproverStages; set { _explicitNullValueApproverStages = value; AdditionalData?.Remove("approver_stages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approver_stages"); else _explicitNullProperties?.Remove("approver_stages"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1ApproverStagesItem> _explicitNullValueApproverStages = default!;
+#endif
+        /// <summary>The criteria property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1Criteria? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1Criteria? _explicitNullValueCriteria = default!;
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1Criteria Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1Criteria _explicitNullValueCriteria = default!;
+#endif
+        /// <summary>Field: id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -58,17 +104,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>Module associated with the rule</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
-        private string? _explicitNullValueModule = default!;
-#nullable restore
-#else
-        public string Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
-        private string _explicitNullValueModule = default!;
-#endif
-        /// <summary>Name of the rule</summary>
+        /// <summary>Field: name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -78,39 +114,39 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>Source identifier for the rule</summary>
-        public int? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
-        private int? _explicitNullValueSource = default!;
-        /// <summary>Rule subtype identifier</summary>
+        /// <summary>Field: overall_approval_type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subtype { get => _explicitNullValueSubtype; set { _explicitNullValueSubtype = value; AdditionalData?.Remove("subtype"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype"); else _explicitNullProperties?.Remove("subtype"); } }
-        private string? _explicitNullValueSubtype = default!;
+        public string? OverallApprovalType { get => _explicitNullValueOverallApprovalType; set { _explicitNullValueOverallApprovalType = value; AdditionalData?.Remove("overall_approval_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_approval_type"); else _explicitNullProperties?.Remove("overall_approval_type"); } }
+        private string? _explicitNullValueOverallApprovalType = default!;
 #nullable restore
 #else
-        public string Subtype { get => _explicitNullValueSubtype; set { _explicitNullValueSubtype = value; AdditionalData?.Remove("subtype"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype"); else _explicitNullProperties?.Remove("subtype"); } }
-        private string _explicitNullValueSubtype = default!;
+        public string OverallApprovalType { get => _explicitNullValueOverallApprovalType; set { _explicitNullValueOverallApprovalType = value; AdditionalData?.Remove("overall_approval_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_approval_type"); else _explicitNullProperties?.Remove("overall_approval_type"); } }
+        private string _explicitNullValueOverallApprovalType = default!;
 #endif
-        /// <summary>Unique identifier of the rule subtype</summary>
+        /// <summary>Nested schema for overall_stages_record_modification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubtypeId { get => _explicitNullValueSubtypeId; set { _explicitNullValueSubtypeId = value; AdditionalData?.Remove("subtype_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype_id"); else _explicitNullProperties?.Remove("subtype_id"); } }
-        private string? _explicitNullValueSubtypeId = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetOverallStagesRecordModificationNested? OverallStagesRecordModification { get => _explicitNullValueOverallStagesRecordModification; set { _explicitNullValueOverallStagesRecordModification = value; AdditionalData?.Remove("overall_stages_record_modification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_stages_record_modification"); else _explicitNullProperties?.Remove("overall_stages_record_modification"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetOverallStagesRecordModificationNested? _explicitNullValueOverallStagesRecordModification = default!;
 #nullable restore
 #else
-        public string SubtypeId { get => _explicitNullValueSubtypeId; set { _explicitNullValueSubtypeId = value; AdditionalData?.Remove("subtype_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype_id"); else _explicitNullProperties?.Remove("subtype_id"); } }
-        private string _explicitNullValueSubtypeId = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetOverallStagesRecordModificationNested OverallStagesRecordModification { get => _explicitNullValueOverallStagesRecordModification; set { _explicitNullValueOverallStagesRecordModification = value; AdditionalData?.Remove("overall_stages_record_modification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_stages_record_modification"); else _explicitNullProperties?.Remove("overall_stages_record_modification"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetOverallStagesRecordModificationNested _explicitNullValueOverallStagesRecordModification = default!;
 #endif
-        /// <summary>Name of the rule subtype</summary>
+        /// <summary>Nested schema for process_admin_configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubtypeName { get => _explicitNullValueSubtypeName; set { _explicitNullValueSubtypeName = value; AdditionalData?.Remove("subtype_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype_name"); else _explicitNullProperties?.Remove("subtype_name"); } }
-        private string? _explicitNullValueSubtypeName = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetProcessAdminConfigurationNested? ProcessAdminConfiguration { get => _explicitNullValueProcessAdminConfiguration; set { _explicitNullValueProcessAdminConfiguration = value; AdditionalData?.Remove("process_admin_configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("process_admin_configuration"); else _explicitNullProperties?.Remove("process_admin_configuration"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetProcessAdminConfigurationNested? _explicitNullValueProcessAdminConfiguration = default!;
 #nullable restore
 #else
-        public string SubtypeName { get => _explicitNullValueSubtypeName; set { _explicitNullValueSubtypeName = value; AdditionalData?.Remove("subtype_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype_name"); else _explicitNullProperties?.Remove("subtype_name"); } }
-        private string _explicitNullValueSubtypeName = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetProcessAdminConfigurationNested ProcessAdminConfiguration { get => _explicitNullValueProcessAdminConfiguration; set { _explicitNullValueProcessAdminConfiguration = value; AdditionalData?.Remove("process_admin_configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("process_admin_configuration"); else _explicitNullProperties?.Remove("process_admin_configuration"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetProcessAdminConfigurationNested _explicitNullValueProcessAdminConfiguration = default!;
 #endif
+        /// <summary>Field: sequence_number</summary>
+        public int? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; AdditionalData?.Remove("sequence_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
+        private int? _explicitNullValueSequenceNumber = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1"/> and sets the default values.
         /// </summary>
@@ -134,16 +170,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
-                { "execution_type", n => { ExecutionType = n.GetStringValue(); } },
+                { "actions_per_approval", n => { ActionsPerApproval = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetActionsPerApprovalNested>(global::Soenneker.Zoho.OpenApiClient.Models.GetActionsPerApprovalNested.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "actions_upon_final_approval", n => { ActionsUponFinalApproval = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponFinalApprovalNested1>(global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponFinalApprovalNested1.CreateFromDiscriminatorValue); } },
+                { "actions_upon_rejection", n => { ActionsUponRejection = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponRejectionNested1>(global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponRejectionNested1.CreateFromDiscriminatorValue); } },
+                { "approver_stages", n => { ApproverStages = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1ApproverStagesItem>(global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1ApproverStagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1Criteria>(global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1Criteria.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "module", n => { Module = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetIntValue(); } },
-                { "subtype", n => { Subtype = n.GetStringValue(); } },
-                { "subtype_id", n => { SubtypeId = n.GetStringValue(); } },
-                { "subtype_name", n => { SubtypeName = n.GetStringValue(); } },
+                { "overall_approval_type", n => { OverallApprovalType = n.GetStringValue(); } },
+                { "overall_stages_record_modification", n => { OverallStagesRecordModification = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetOverallStagesRecordModificationNested>(global::Soenneker.Zoho.OpenApiClient.Models.GetOverallStagesRecordModificationNested.CreateFromDiscriminatorValue); } },
+                { "process_admin_configuration", n => { ProcessAdminConfiguration = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetProcessAdminConfigurationNested>(global::Soenneker.Zoho.OpenApiClient.Models.GetProcessAdminConfigurationNested.CreateFromDiscriminatorValue); } },
+                { "sequence_number", n => { SequenceNumber = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -153,14 +192,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("execution_type", ExecutionType);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetActionsPerApprovalNested>("actions_per_approval", ActionsPerApproval);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponFinalApprovalNested1>("actions_upon_final_approval", ActionsUponFinalApproval);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetActionsUponRejectionNested1>("actions_upon_rejection", ActionsUponRejection);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1ApproverStagesItem>("approver_stages", ApproverStages);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetRulesNested1Criteria>("criteria", Criteria);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("module", Module);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("source", Source);
-            writer.WriteStringValue("subtype", Subtype);
-            writer.WriteStringValue("subtype_id", SubtypeId);
-            writer.WriteStringValue("subtype_name", SubtypeName);
+            writer.WriteStringValue("overall_approval_type", OverallApprovalType);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetOverallStagesRecordModificationNested>("overall_stages_record_modification", OverallStagesRecordModification);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetProcessAdminConfigurationNested>("process_admin_configuration", ProcessAdminConfiguration);
+            writer.WriteIntValue("sequence_number", SequenceNumber);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

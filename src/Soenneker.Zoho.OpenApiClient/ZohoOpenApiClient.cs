@@ -6,14 +6,25 @@ using Microsoft.Kiota.Serialization.Form;
 using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
+using Soenneker.Zoho.OpenApiClient.Ab_testing;
 using Soenneker.Zoho.OpenApiClient.Apis;
 using Soenneker.Zoho.OpenApiClient.Appointment_preference;
 using Soenneker.Zoho.OpenApiClient.Appointments;
+using Soenneker.Zoho.OpenApiClient.Approval_process;
 using Soenneker.Zoho.OpenApiClient.Assignment_rules;
 using Soenneker.Zoho.OpenApiClient.Associate_email;
 using Soenneker.Zoho.OpenApiClient.Attachments;
 using Soenneker.Zoho.OpenApiClient.Audit_log_export;
 using Soenneker.Zoho.OpenApiClient.Automation_functions;
+using Soenneker.Zoho.OpenApiClient.Blueprint_actions;
+using Soenneker.Zoho.OpenApiClient.Blueprint_config_actions;
+using Soenneker.Zoho.OpenApiClient.Blueprint_config_activate;
+using Soenneker.Zoho.OpenApiClient.Blueprint_process_config;
+using Soenneker.Zoho.OpenApiClient.Blueprint_state_config;
+using Soenneker.Zoho.OpenApiClient.Blueprint_transitions;
+using Soenneker.Zoho.OpenApiClient.Blueprint_usage;
+using Soenneker.Zoho.OpenApiClient.Blueprints;
+using Soenneker.Zoho.OpenApiClient.Blueprints_clone;
 using Soenneker.Zoho.OpenApiClient.Bulk_read;
 using Soenneker.Zoho.OpenApiClient.Bulk_write;
 using Soenneker.Zoho.OpenApiClient.Business_hours;
@@ -109,6 +120,7 @@ using Soenneker.Zoho.OpenApiClient.Users_territories;
 using Soenneker.Zoho.OpenApiClient.Users_transfer;
 using Soenneker.Zoho.OpenApiClient.Variable_groups;
 using Soenneker.Zoho.OpenApiClient.Variables;
+using Soenneker.Zoho.OpenApiClient.Webforms;
 using Soenneker.Zoho.OpenApiClient.Webhooks;
 using Soenneker.Zoho.OpenApiClient.Wizards;
 using Soenneker.Zoho.OpenApiClient.Workflow_configurations;
@@ -128,6 +140,11 @@ namespace Soenneker.Zoho.OpenApiClient
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZohoOpenApiClient : BaseRequestBuilder
     {
+        /// <summary>The ab_testing property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Ab_testing.Ab_testingRequestBuilder Ab_testing
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Ab_testing.Ab_testingRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The apis property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Apis.ApisRequestBuilder Apis
         {
@@ -142,6 +159,11 @@ namespace Soenneker.Zoho.OpenApiClient
         public global::Soenneker.Zoho.OpenApiClient.Appointments.AppointmentsRequestBuilder Appointments
         {
             get => new global::Soenneker.Zoho.OpenApiClient.Appointments.AppointmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The approval_process property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Approval_process.Approval_processRequestBuilder Approval_process
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Approval_process.Approval_processRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The assignment_rules property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Assignment_rulesRequestBuilder Assignment_rules
@@ -167,6 +189,51 @@ namespace Soenneker.Zoho.OpenApiClient
         public global::Soenneker.Zoho.OpenApiClient.Automation_functions.Automation_functionsRequestBuilder Automation_functions
         {
             get => new global::Soenneker.Zoho.OpenApiClient.Automation_functions.Automation_functionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The blueprint_actions property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Blueprint_actions.Blueprint_actionsRequestBuilder Blueprint_actions
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Blueprint_actions.Blueprint_actionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The blueprint_config_actions property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Blueprint_config_actions.Blueprint_config_actionsRequestBuilder Blueprint_config_actions
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Blueprint_config_actions.Blueprint_config_actionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The blueprint_config_activate property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Blueprint_config_activate.Blueprint_config_activateRequestBuilder Blueprint_config_activate
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Blueprint_config_activate.Blueprint_config_activateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The blueprint_process_config property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Blueprint_process_config.Blueprint_process_configRequestBuilder Blueprint_process_config
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Blueprint_process_config.Blueprint_process_configRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The blueprint_state_config property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Blueprint_state_config.Blueprint_state_configRequestBuilder Blueprint_state_config
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Blueprint_state_config.Blueprint_state_configRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The blueprint_transitions property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Blueprint_transitions.Blueprint_transitionsRequestBuilder Blueprint_transitions
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Blueprint_transitions.Blueprint_transitionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The blueprint_usage property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Blueprint_usage.Blueprint_usageRequestBuilder Blueprint_usage
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Blueprint_usage.Blueprint_usageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The blueprints property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Blueprints.BlueprintsRequestBuilder Blueprints
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Blueprints.BlueprintsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The blueprints_clone property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Blueprints_clone.Blueprints_cloneRequestBuilder Blueprints_clone
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Blueprints_clone.Blueprints_cloneRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The bulk_read property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Bulk_read.Bulk_readRequestBuilder Bulk_read
@@ -642,6 +709,11 @@ namespace Soenneker.Zoho.OpenApiClient
         public global::Soenneker.Zoho.OpenApiClient.Variables.VariablesRequestBuilder Variables
         {
             get => new global::Soenneker.Zoho.OpenApiClient.Variables.VariablesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The webforms property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Webforms.WebformsRequestBuilder Webforms
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Webforms.WebformsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The webhooks property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Webhooks.WebhooksRequestBuilder Webhooks

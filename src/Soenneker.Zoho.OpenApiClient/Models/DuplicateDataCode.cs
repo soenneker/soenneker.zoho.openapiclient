@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**DUPLICATE_DATA** - Represents duplicate data.</summary>
+    /// <summary>Represents the error code returned when an AB test with the same name already exists in the module.Possible values:**DUPLICATE_DATA** - An AB test with the specified name already exists.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DuplicateDataCode
     {

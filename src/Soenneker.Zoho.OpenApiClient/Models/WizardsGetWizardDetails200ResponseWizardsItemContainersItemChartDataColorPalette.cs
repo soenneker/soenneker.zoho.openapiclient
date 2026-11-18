@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the color palette applied to the wizard canvas, defining the colors used for visual elements such as button backgrounds.
+    /// Represents the color palette applied to the wizard canvas, defining the colors used for visual elements such as button backgrounds. This key is present in the response only if at least one custom color has been chosen for a button on a screen.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataColorPalette : IAdditionalDataHolder, IParsable

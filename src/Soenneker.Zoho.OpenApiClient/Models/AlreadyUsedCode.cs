@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the error code returned when a resource or value is already in use and cannot be reused in the requested operation.</summary>
+    /// <summary>Error code</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AlreadyUsedCode
     {

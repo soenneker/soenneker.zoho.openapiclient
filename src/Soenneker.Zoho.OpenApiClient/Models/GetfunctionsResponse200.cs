@@ -39,12 +39,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Pagination metadata returned with list responses, including page number, per-page count, total record count, sort details, and page tokens for cursor-based navigation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested? _explicitNullValueInfo = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.FunctionsGetInfoNested? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FunctionsGetInfoNested? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested _explicitNullValueInfo = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.FunctionsGetInfoNested Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FunctionsGetInfoNested _explicitNullValueInfo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetfunctionsResponse200"/> and sets the default values.
@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "functions", n => { Functions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetFunctionsNested>(global::Soenneker.Zoho.OpenApiClient.Models.GetFunctionsNested.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested>(global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested.CreateFromDiscriminatorValue); } },
+                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FunctionsGetInfoNested>(global::Soenneker.Zoho.OpenApiClient.Models.FunctionsGetInfoNested.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetFunctionsNested>("functions", Functions);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested>("info", Info);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FunctionsGetInfoNested>("info", Info);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the response details returned upon successful initiation of the sign mail merge operation.
+    /// Nested schema for details
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DetailsNested1 : IAdditionalDataHolder, IParsable
@@ -18,33 +18,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("report_link") is null) { _explicitNullValueReportLink = default!; _explicitNullProperties?.Remove("report_link"); }
-            else if (parseNode.GetChildNode("report_link") is { } nullNodeReportLink && nullNodeReportLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportLink = null;
-            if (parseNode.GetChildNode("sign_resource_id") is null) { _explicitNullValueSignResourceId = default!; _explicitNullProperties?.Remove("sign_resource_id"); }
-            else if (parseNode.GetChildNode("sign_resource_id") is { } nullNodeSignResourceId && nullNodeSignResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignResourceId = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the URL of the sign mail merge job report.</summary>
+        /// <summary>Field: id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportLink { get => _explicitNullValueReportLink; set { _explicitNullValueReportLink = value; AdditionalData?.Remove("report_link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_link"); else _explicitNullProperties?.Remove("report_link"); } }
-        private string? _explicitNullValueReportLink = default!;
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string ReportLink { get => _explicitNullValueReportLink; set { _explicitNullValueReportLink = value; AdditionalData?.Remove("report_link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_link"); else _explicitNullProperties?.Remove("report_link"); } }
-        private string _explicitNullValueReportLink = default!;
-#endif
-        /// <summary>Represents the unique ID of the sign request resource created for the sign mail merge operation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SignResourceId { get => _explicitNullValueSignResourceId; set { _explicitNullValueSignResourceId = value; AdditionalData?.Remove("sign_resource_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_resource_id"); else _explicitNullProperties?.Remove("sign_resource_id"); } }
-        private string? _explicitNullValueSignResourceId = default!;
-#nullable restore
-#else
-        public string SignResourceId { get => _explicitNullValueSignResourceId; set { _explicitNullValueSignResourceId = value; AdditionalData?.Remove("sign_resource_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_resource_id"); else _explicitNullProperties?.Remove("sign_resource_id"); } }
-        private string _explicitNullValueSignResourceId = default!;
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DetailsNested1"/> and sets the default values.
@@ -71,8 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "report_link", n => { ReportLink = n.GetStringValue(); } },
-                { "sign_resource_id", n => { SignResourceId = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,8 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("report_link", ReportLink);
-            writer.WriteStringValue("sign_resource_id", SignResourceId);
+            writer.WriteStringValue("id", Id);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -29,12 +29,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the pagination metadata for the scheduled jobs list, including per-page size, current page, item count, and whether more records are available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo? _explicitNullValueInfo = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldsListPageInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldsListPageInfo? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo _explicitNullValueInfo = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldsListPageInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldsListPageInfo _explicitNullValueInfo = default!;
 #endif
         /// <summary>Represents the list of scheduled picklist field action jobs retrieved for the specified field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo>(global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo.CreateFromDiscriminatorValue); } },
+                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldsListPageInfo>(global::Soenneker.Zoho.OpenApiClient.Models.FieldsListPageInfo.CreateFromDiscriminatorValue); } },
                 { "scheduled_jobs", n => { ScheduledJobs = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldPicklistActionJob>(global::Soenneker.Zoho.OpenApiClient.Models.FieldPicklistActionJob.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -82,7 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo>("info", Info);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldsListPageInfo>("info", Info);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldPicklistActionJob>("scheduled_jobs", ScheduledJobs);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

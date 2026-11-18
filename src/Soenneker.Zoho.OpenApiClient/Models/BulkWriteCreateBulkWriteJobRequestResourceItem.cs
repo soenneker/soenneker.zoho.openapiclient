@@ -108,7 +108,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemFieldMappingsItem>(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemFieldMappingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "file_id", n => { FileId = n.GetStringValue(); } },

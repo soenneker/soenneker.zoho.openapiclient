@@ -79,7 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsField>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsField.CreateFromDiscriminatorValue); } },
                 { "period", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsPeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePeriod = default; _explicitNullProperties?.Remove("period"); AdditionalData["period"] = unknown; } else { Period = parsed; AdditionalData.Remove("period"); } } },

@@ -85,8 +85,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateAssociateActionSchemaRelatedDetails _explicitNullValueRelatedDetails = default!;
 #endif
         /// <summary>Represents the action type discriminator that identifies this as a FieldUpdateAssociate action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesType? _explicitNullValueType = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateAssociateActionSchemaType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateAssociateActionSchemaType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateAssociateActionSchema"/> and sets the default values.
         /// </summary>
@@ -110,14 +110,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "_delete", n => { Delete = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateAssociateActionSchemaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateAssociateActionSchemaDetails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "related_details", n => { RelatedDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateAssociateActionSchemaRelatedDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateAssociateActionSchemaRelatedDetails.CreateFromDiscriminatorValue); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateAssociateActionSchemaType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>
@@ -132,7 +132,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateAssociateActionSchemaRelatedDetails>("related_details", RelatedDetails);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateAssociateActionSchemaType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

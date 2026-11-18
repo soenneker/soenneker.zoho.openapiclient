@@ -146,7 +146,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "attachment_name", n => { AttachmentName = n.GetStringValue(); } },
                 { "bcc_email", n => { BccEmail = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.BccEmailNested>(global::Soenneker.Zoho.OpenApiClient.Models.BccEmailNested.CreateFromDiscriminatorValue)?.AsList(); } },

@@ -88,7 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "calendar_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomCalendarType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCalendarType = default; _explicitNullProperties?.Remove("calendar_type"); AdditionalData["calendar_type"] = unknown; } else { CalendarType = parsed; AdditionalData.Remove("calendar_type"); } } },
                 { "display_based_on", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearDisplayBasedOnForCustom>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDisplayBasedOn = default; _explicitNullProperties?.Remove("display_based_on"); AdditionalData["display_based_on"] = unknown; } else { DisplayBasedOn = parsed; AdditionalData.Remove("display_based_on"); } } },

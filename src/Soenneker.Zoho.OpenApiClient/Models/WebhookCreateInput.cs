@@ -175,7 +175,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "authentication", n => { Authentication = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputAuthentication>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputAuthentication.CreateFromDiscriminatorValue); } },
                 { "body", n => { Body = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputBody>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputBody.CreateFromDiscriminatorValue); } },

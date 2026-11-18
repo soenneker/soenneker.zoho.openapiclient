@@ -86,7 +86,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "form_data_content", n => { FormDataContent = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormDataContent>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormDataContent.CreateFromDiscriminatorValue); } },
                 { "format", n => { Format = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormat>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormat.CreateFromDiscriminatorValue); } },

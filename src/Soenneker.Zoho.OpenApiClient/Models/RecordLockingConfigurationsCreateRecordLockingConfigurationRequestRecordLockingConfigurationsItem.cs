@@ -138,7 +138,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "excluded_fields", n => { ExcludedFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfigurationRequestRecordLockingConfigurationsItemExcludedFieldsItem>(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfigurationRequestRecordLockingConfigurationsItemExcludedFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "feature_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingFeatureType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFeatureType = default; _explicitNullProperties?.Remove("feature_type"); AdditionalData["feature_type"] = unknown; } else { FeatureType = parsed; AdditionalData.Remove("feature_type"); } } },

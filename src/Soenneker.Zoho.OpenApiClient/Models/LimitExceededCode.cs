@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**LIMIT_EXCEEDED** - Represents limit exceeded.</summary>
+    /// <summary>Represents the error code returned when the AB testing limit has been exceeded.Possible values:**LIMIT_EXCEEDED** - The maximum number of allowed AB tests has been reached.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LimitExceededCode
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**NOT_SUPPORTED** - Represents not supported.</summary>
+    /// <summary>Error code</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NotSupportedCode
     {

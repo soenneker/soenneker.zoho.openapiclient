@@ -99,7 +99,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "apply_restriction", n => { ApplyRestriction = n.GetBoolValue(); } },
                 { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesAutomationScheduleCallDetailsFieldMappingsItem>(global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesAutomationScheduleCallDetailsFieldMappingsItem.CreateFromDiscriminatorValue)?.AsList(); } },

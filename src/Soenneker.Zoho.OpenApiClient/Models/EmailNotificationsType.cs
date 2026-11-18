@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the action type for this follow-up step.</summary>
+    /// <summary>The type of escalation action. Possible values: **email_notifications** - Indicates that the escalation action sends an email notification.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EmailNotificationsType
     {

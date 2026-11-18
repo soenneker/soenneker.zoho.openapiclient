@@ -86,7 +86,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "file_name", n => { FileName = n.GetStringValue(); } },
                 { "mail_merge_template", n => { MailMergeTemplate = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate>(global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate.CreateFromDiscriminatorValue); } },

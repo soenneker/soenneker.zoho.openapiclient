@@ -37,8 +37,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject> _explicitNullValueResources = default!;
 #endif
         /// <summary>Represents the type of the action.Possible values:**tasks** - Represents tasks. </summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.TasksType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.TasksType? _explicitNullValueType = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObjectType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObjectType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject"/> and sets the default values.
         /// </summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>(global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TasksType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObjectType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>("resources", Resources);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TasksType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObjectType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

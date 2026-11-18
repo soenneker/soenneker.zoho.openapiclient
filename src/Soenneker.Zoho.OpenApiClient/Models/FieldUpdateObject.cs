@@ -125,7 +125,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "association_details", n => { AssociationDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectAssociationDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectAssociationDetails.CreateFromDiscriminatorValue); } },
                 { "data_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectDataType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDataType = default; _explicitNullProperties?.Remove("data_type"); AdditionalData["data_type"] = unknown; } else { DataType = parsed; AdditionalData.Remove("data_type"); } } },

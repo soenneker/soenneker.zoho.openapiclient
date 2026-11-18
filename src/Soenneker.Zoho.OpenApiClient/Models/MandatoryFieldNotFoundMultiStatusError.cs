@@ -30,7 +30,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code for this response.</summary>
+        /// <summary>Represents the error code returned when a required field is missing from the request body.Possible values:**MANDATORY_NOT_FOUND** - A required field is absent from the request.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.MandatoryNotFoundCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MandatoryNotFoundCode? _explicitNullValueCode = default!;
         /// <summary>Represents the details providing validation context for the error.</summary>
@@ -86,7 +86,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "code", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MandatoryNotFoundCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCode = default; _explicitNullProperties?.Remove("code"); AdditionalData["code"] = unknown; } else { Code = parsed; AdditionalData.Remove("code"); } } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldNotFoundMultiStatusErrorDetails>(global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldNotFoundMultiStatusErrorDetails.CreateFromDiscriminatorValue); } },

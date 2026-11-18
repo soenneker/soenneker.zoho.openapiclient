@@ -27,7 +27,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code for this response.</summary>
+        /// <summary>Represents the error code returned when a required field is missing from the request body.Possible values:**MANDATORY_NOT_FOUND** - A required field is absent from the request.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.MandatoryNotFoundCode? Code { get; set; }
         /// <summary>Represents the additional information about the response. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ShareLimitExceedErrorResponse ShareLimitExceedErrorResponse { get; set; }
 #endif
-        /// <summary>Indicates the response status.</summary>
+        /// <summary>Represents the status of the API response.Possible values:**error** - The request could not be processed because the weeks value exceeds the allowed maximum.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateBadResponseWithShareArrayShareItem"/> and sets the default values.
@@ -136,7 +136,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema41515(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema35146(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema35017(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema34996(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema1083(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema64536(unionPayload) } : null;
+            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema51084(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema44578(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema44316(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema44295(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema1739(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema76377(unionPayload) } : null;
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
             bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![1] : (bool?)false;
             bool? matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![2] : (bool?)false;

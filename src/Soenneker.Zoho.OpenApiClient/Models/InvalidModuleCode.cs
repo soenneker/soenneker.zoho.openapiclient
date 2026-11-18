@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the error code for this response.</summary>
+    /// <summary>Represents the error code returned when the module name in the request is not valid.Possible values:**INVALID_MODULE** - The module name specified in the request is not a valid Zoho CRM module.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum InvalidModuleCode
     {

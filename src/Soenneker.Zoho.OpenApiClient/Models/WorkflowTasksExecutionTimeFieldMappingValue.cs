@@ -96,7 +96,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "notify_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeValueNotifyType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNotifyType = default; _explicitNullProperties?.Remove("notify_type"); AdditionalData["notify_type"] = unknown; } else { NotifyType = parsed; AdditionalData.Remove("notify_type"); } } },
                 { "period", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeValuePeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePeriod = default; _explicitNullProperties?.Remove("period"); AdditionalData["period"] = unknown; } else { Period = parsed; AdditionalData.Remove("period"); } } },

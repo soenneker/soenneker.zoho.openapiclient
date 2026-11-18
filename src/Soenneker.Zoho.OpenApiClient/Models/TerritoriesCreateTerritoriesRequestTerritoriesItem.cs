@@ -134,7 +134,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "account_rule_criteria", n => { AccountRuleCriteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemAccountRuleCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemAccountRuleCriteria.CreateFromDiscriminatorValue); } },
                 { "deal_rule_criteria", n => { DealRuleCriteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteria.CreateFromDiscriminatorValue); } },

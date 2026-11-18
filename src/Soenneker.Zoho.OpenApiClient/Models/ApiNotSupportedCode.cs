@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the error code. The value is **API_NOT_SUPPORTED**.</summary>
+    /// <summary>Represents the error code identifying the failure reason.Possible values:**API_NOT_SUPPORTED** - The API is not supported for the selected domain.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ApiNotSupportedCode
     {

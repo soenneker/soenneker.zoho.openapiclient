@@ -132,7 +132,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "Account_Name", n => { AccountName = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsContactsItemAccountName>(global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsContactsItemAccountName.CreateFromDiscriminatorValue); } },
                 { "$approval_state", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsContactsItemApprovalState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApprovalState = default; _explicitNullProperties?.Remove("$approval_state"); AdditionalData["$approval_state"] = unknown; } else { ApprovalState = parsed; AdditionalData.Remove("$approval_state"); } } },

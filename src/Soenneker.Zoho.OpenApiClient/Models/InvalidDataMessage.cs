@@ -3,11 +3,11 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the error message describing the invalid data.</summary>
+    /// <summary>Represents the error message indicating that the field data is invalid.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum InvalidDataMessage
     {
-        [EnumMember(Value = "invalid data")]
+        [EnumMember(Value = "Invalid data")]
         #pragma warning disable CS1591
         InvalidData,
         #pragma warning restore CS1591

@@ -30,7 +30,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code for this response.</summary>
+        /// <summary>Represents the error code returned when the number of weeks specified exceeds the allowed maximum.Possible values:**INVALID_DATA** - The weeks value is greater than the allowed maximum of 12.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataCode? _explicitNullValueCode = default!;
         /// <summary>Represents the additional information about the response. </summary>
@@ -43,10 +43,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.InvalidShareWithValueErrorResponseDetails Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.InvalidShareWithValueErrorResponseDetails _explicitNullValueDetails = default!;
 #endif
-        /// <summary>Represents the error message describing the invalid data.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataMessage? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataMessage? _explicitNullValueMessage = default!;
-        /// <summary>Indicates the response status.</summary>
+        /// <summary>Represents the response message returned by the API. </summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidShareWithValueErrorResponseMessage? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.InvalidShareWithValueErrorResponseMessage? _explicitNullValueMessage = default!;
+        /// <summary>Represents the status of the API response.Possible values:**error** - The request could not be processed because the weeks value exceeds the allowed maximum.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? _explicitNullValueStatus = default!;
         /// <summary>
@@ -72,11 +72,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "code", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCode = default; _explicitNullProperties?.Remove("code"); AdditionalData["code"] = unknown; } else { Code = parsed; AdditionalData.Remove("code"); } } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidShareWithValueErrorResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.InvalidShareWithValueErrorResponseDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataMessage>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMessage = default; _explicitNullProperties?.Remove("message"); AdditionalData["message"] = unknown; } else { Message = parsed; AdditionalData.Remove("message"); } } },
+                { "message", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidShareWithValueErrorResponseMessage>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMessage = default; _explicitNullProperties?.Remove("message"); AdditionalData["message"] = unknown; } else { Message = parsed; AdditionalData.Remove("message"); } } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
@@ -89,7 +89,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidShareWithValueErrorResponseDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataMessage>("message", Message);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidShareWithValueErrorResponseMessage>("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

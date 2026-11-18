@@ -290,7 +290,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(21)
             {
                 { "add_meeting", n => { AddMeeting = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ActionUpdateDetailsAddMeeting>(global::Soenneker.Zoho.OpenApiClient.Models.ActionUpdateDetailsAddMeeting.CreateFromDiscriminatorValue); } },
                 { "add_tags", n => { AddTags = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ActionUpdateDetailsAddTags>(global::Soenneker.Zoho.OpenApiClient.Models.ActionUpdateDetailsAddTags.CreateFromDiscriminatorValue); } },

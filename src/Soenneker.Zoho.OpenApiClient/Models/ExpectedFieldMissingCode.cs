@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**EXPECTED_FIELD_MISSING** - Represents expected field missing.</summary>
+    /// <summary>Represents the error code returned when one or more expected fields are missing from the request body.Possible values:**EXPECTED_FIELD_MISSING** - A required set of alternative fields is absent from the request.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExpectedFieldMissingCode
     {

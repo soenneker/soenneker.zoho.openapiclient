@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the error message describing the invalid module name.</summary>
+    /// <summary>Represents the error message indicating that the module name is not valid.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TheModuleNameGivenSeemsToBeInvalidMessage
     {

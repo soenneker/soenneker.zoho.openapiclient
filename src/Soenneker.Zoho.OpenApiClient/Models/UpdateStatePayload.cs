@@ -98,7 +98,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UpdateStatePayloadDetails>(global::Soenneker.Zoho.OpenApiClient.Models.UpdateStatePayloadDetails.CreateFromDiscriminatorValue); } },
                 { "from_transition", n => { FromTransition = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FromTransitionUpdate>(global::Soenneker.Zoho.OpenApiClient.Models.FromTransitionUpdate.CreateFromDiscriminatorValue); } },

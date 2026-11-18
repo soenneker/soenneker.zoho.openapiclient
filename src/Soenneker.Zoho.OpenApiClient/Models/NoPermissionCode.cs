@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the error code returned for the permission-denied failure.</summary>
+    /// <summary>Represents the error code returned when the requesting user lacks the required CRM permission.Possible values:**NO_PERMISSION** - The user&apos;s CRM profile does not include the required permission for this action.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NoPermissionCode
     {

@@ -260,7 +260,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(22)
             {
                 { "Availability_Type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseAvailabilityType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAvailabilityType = default; _explicitNullProperties?.Remove("Availability_Type"); AdditionalData["Availability_Type"] = unknown; } else { AvailabilityType = parsed; AdditionalData.Remove("Availability_Type"); } } },
                 { "Available_Dates", n => { AvailableDates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the message that describes the result of the Assignment Rule operation.Possible values:**permission denied** - Represents permission denied.</summary>
+    /// <summary>Represents the error message indicating that the user does not have permission to perform this action.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PermissionDeniedMessage
     {

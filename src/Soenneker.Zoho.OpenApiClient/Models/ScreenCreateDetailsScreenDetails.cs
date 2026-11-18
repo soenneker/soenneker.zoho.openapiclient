@@ -98,7 +98,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "button_align", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScreenConfigurationButtonAlign>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueButtonAlign = default; _explicitNullProperties?.Remove("button_align"); AdditionalData["button_align"] = unknown; } else { ButtonAlign = parsed; AdditionalData.Remove("button_align"); } } },
                 { "buttons", n => { Buttons = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScreenButton>(global::Soenneker.Zoho.OpenApiClient.Models.ScreenButton.CreateFromDiscriminatorValue)?.AsList(); } },

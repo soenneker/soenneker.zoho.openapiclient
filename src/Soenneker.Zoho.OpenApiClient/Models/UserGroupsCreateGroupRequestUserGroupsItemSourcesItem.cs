@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroupRequestUserGroupsItemSourcesItemSource>(global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroupRequestUserGroupsItemSourcesItemSource.CreateFromDiscriminatorValue); } },
                 { "sub_territories", n => { SubTerritories = n.GetBoolValue(); } },

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>The error message describing the parameter pattern mismatch.</summary>
+    /// <summary>Represents the error message indicating that the input value does not match the expected pattern.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PleaseCheckWhetherTheInputValuesAreCorrectMessage
     {

@@ -93,7 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "assign_to", n => { AssignTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignTo>(global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignTo.CreateFromDiscriminatorValue); } },
                 { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest>(global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest.CreateFromDiscriminatorValue); } },

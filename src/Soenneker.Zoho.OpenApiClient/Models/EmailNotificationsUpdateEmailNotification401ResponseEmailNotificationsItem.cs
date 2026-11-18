@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityInModuleError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkEmailCcError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsInvalidModuleError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidAddressError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidApiNameError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidAssociatedToError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidNameError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidRecipientsError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidResourceIdentifierError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidTemplateIdError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockedNotificationEditError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldMissingError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MissingRequiredFieldError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NameLengthExceededError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ResourceIdentifierLengthExceededError"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityInModuleError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkEmailCcError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsDependentFieldMissingError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsInvalidDataTypeError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsInvalidModuleError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsMandatoryFieldMissingError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidAddressError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidApiNameError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidAssociatedToError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidNameError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidRecipientsError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidResourceIdentifierError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidTemplateIdError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockedNotificationEditError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MissingRequiredFieldError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NameLengthExceededError"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ResourceIdentifierLengthExceededError"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailNotificationsUpdateEmailNotification401ResponseEmailNotificationsItem : IComposedTypeWrapper, IParsable
@@ -34,14 +34,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.BulkEmailCcError BulkEmailCcError { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingError"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingError? DependentFieldMissingError { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingError DependentFieldMissingError { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchError"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +42,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchError DependentMismatchError { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsDependentFieldMissingError"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsDependentFieldMissingError? EmailNotificationsDependentFieldMissingError { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsDependentFieldMissingError EmailNotificationsDependentFieldMissingError { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsInvalidDataTypeError"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsInvalidDataTypeError? EmailNotificationsInvalidDataTypeError { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsInvalidDataTypeError EmailNotificationsInvalidDataTypeError { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsInvalidModuleError"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +65,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsInvalidModuleError EmailNotificationsInvalidModuleError { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsMandatoryFieldMissingError"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsMandatoryFieldMissingError? EmailNotificationsMandatoryFieldMissingError { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsMandatoryFieldMissingError EmailNotificationsMandatoryFieldMissingError { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidAddressError"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,14 +97,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.InvalidAssociatedToError InvalidAssociatedToError { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeError"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeError? InvalidDataTypeError { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeError InvalidDataTypeError { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidNameError"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,14 +137,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.LockedNotificationEditError LockedNotificationEditError { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldMissingError"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldMissingError? MandatoryFieldMissingError { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldMissingError MandatoryFieldMissingError { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MissingRequiredFieldError"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -180,15 +180,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 
             }
-            else if("DependentFieldMissingError".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                
-            }
             else if("DependentMismatchError".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
+            else if("EmailNotificationsDependentFieldMissingError".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("EmailNotificationsInvalidDataTypeError".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
             else if("EmailNotificationsInvalidModuleError".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("EmailNotificationsMandatoryFieldMissingError".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
@@ -201,10 +209,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 
             }
             else if("InvalidAssociatedToError".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                
-            }
-            else if("InvalidDataTypeError".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
@@ -228,10 +232,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 
             }
-            else if("MandatoryFieldMissingError".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                
-            }
             else if("MissingRequiredFieldError".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
@@ -246,7 +246,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema41413(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema19029(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema1371(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema34812(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema33170(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema15758(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema35104(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema33132(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema34736(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema46535(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema5042(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema40360(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema33963(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema15559(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema34965(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema33152(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema43982(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema60682(unionPayload) } : null;
+            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema25417(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema25403(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema2074(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema44081(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema42250(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema21370(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema44486(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema42179(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema43961(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema56344(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema9636(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema49887(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema25382(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema25264(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema44234(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema42199(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema53631(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema72368(unionPayload) } : null;
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
             bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![1] : (bool?)false;
             bool? matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![2] : (bool?)false;
@@ -284,8 +284,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if (matchesUnionBranch15 != false) matchingUnionBranches++;
             if (matchesUnionBranch16 != false) matchingUnionBranches++;
             if (matchesUnionBranch17 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.AmbiguityInModuleError == null && result.BulkEmailCcError == null && result.DependentFieldMissingError == null && result.DependentMismatchError == null && result.EmailNotificationsInvalidModuleError == null && result.InvalidAddressError == null && result.InvalidApiNameError == null && result.InvalidAssociatedToError == null && result.InvalidDataTypeError == null && result.InvalidNameError == null && result.InvalidRecipientsError == null && result.InvalidResourceIdentifierError == null && result.InvalidTemplateIdError == null && result.LockedNotificationEditError == null && result.MandatoryFieldMissingError == null && result.MissingRequiredFieldError == null && result.NameLengthExceededError == null && result.ResourceIdentifierLengthExceededError == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.MandatoryFieldMissingError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldMissingError(), parseNode);
+            bool noSelectedUnionBranch = result.AmbiguityInModuleError == null && result.BulkEmailCcError == null && result.DependentMismatchError == null && result.EmailNotificationsDependentFieldMissingError == null && result.EmailNotificationsInvalidDataTypeError == null && result.EmailNotificationsInvalidModuleError == null && result.EmailNotificationsMandatoryFieldMissingError == null && result.InvalidAddressError == null && result.InvalidApiNameError == null && result.InvalidAssociatedToError == null && result.InvalidNameError == null && result.InvalidRecipientsError == null && result.InvalidResourceIdentifierError == null && result.InvalidTemplateIdError == null && result.LockedNotificationEditError == null && result.MissingRequiredFieldError == null && result.NameLengthExceededError == null && result.ResourceIdentifierLengthExceededError == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.EmailNotificationsMandatoryFieldMissingError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsMandatoryFieldMissingError(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.EmailNotificationsInvalidModuleError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsInvalidModuleError(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch2 == true && matchingUnionBranches == 1) result.AmbiguityInModuleError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityInModuleError(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch3 == true && matchingUnionBranches == 1) result.InvalidRecipientsError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.InvalidRecipientsError(), parseNode);
@@ -297,13 +297,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if (noSelectedUnionBranch && matchesUnionBranch9 == true && matchingUnionBranches == 1) result.NameLengthExceededError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.NameLengthExceededError(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch10 == true && matchingUnionBranches == 1) result.BulkEmailCcError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.BulkEmailCcError(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch11 == true && matchingUnionBranches == 1) result.LockedNotificationEditError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LockedNotificationEditError(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch12 == true && matchingUnionBranches == 1) result.InvalidDataTypeError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeError(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch13 == true && matchingUnionBranches == 1) result.DependentFieldMissingError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingError(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch12 == true && matchingUnionBranches == 1) result.EmailNotificationsInvalidDataTypeError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsInvalidDataTypeError(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch13 == true && matchingUnionBranches == 1) result.EmailNotificationsDependentFieldMissingError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsDependentFieldMissingError(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch14 == true && matchingUnionBranches == 1) result.InvalidResourceIdentifierError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.InvalidResourceIdentifierError(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch15 == true && matchingUnionBranches == 1) result.InvalidApiNameError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.InvalidApiNameError(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch16 == true && matchingUnionBranches == 1) result.MissingRequiredFieldError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.MissingRequiredFieldError(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch17 == true && matchingUnionBranches == 1) result.ResourceIdentifierLengthExceededError = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ResourceIdentifierLengthExceededError(), parseNode);
-            if (result.AmbiguityInModuleError == null && result.BulkEmailCcError == null && result.DependentFieldMissingError == null && result.DependentMismatchError == null && result.EmailNotificationsInvalidModuleError == null && result.InvalidAddressError == null && result.InvalidApiNameError == null && result.InvalidAssociatedToError == null && result.InvalidDataTypeError == null && result.InvalidNameError == null && result.InvalidRecipientsError == null && result.InvalidResourceIdentifierError == null && result.InvalidTemplateIdError == null && result.LockedNotificationEditError == null && result.MandatoryFieldMissingError == null && result.MissingRequiredFieldError == null && result.NameLengthExceededError == null && result.ResourceIdentifierLengthExceededError == null) result.UnrecognizedValue = unionPayload;
+            if (result.AmbiguityInModuleError == null && result.BulkEmailCcError == null && result.DependentMismatchError == null && result.EmailNotificationsDependentFieldMissingError == null && result.EmailNotificationsInvalidDataTypeError == null && result.EmailNotificationsInvalidModuleError == null && result.EmailNotificationsMandatoryFieldMissingError == null && result.InvalidAddressError == null && result.InvalidApiNameError == null && result.InvalidAssociatedToError == null && result.InvalidNameError == null && result.InvalidRecipientsError == null && result.InvalidResourceIdentifierError == null && result.InvalidTemplateIdError == null && result.LockedNotificationEditError == null && result.MissingRequiredFieldError == null && result.NameLengthExceededError == null && result.ResourceIdentifierLengthExceededError == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -322,17 +322,25 @@ return result;
             {
                 return BulkEmailCcError.GetFieldDeserializers();
             }
-            else if(DependentFieldMissingError != null)
-            {
-                return DependentFieldMissingError.GetFieldDeserializers();
-            }
             else if(DependentMismatchError != null)
             {
                 return DependentMismatchError.GetFieldDeserializers();
             }
+            else if(EmailNotificationsDependentFieldMissingError != null)
+            {
+                return EmailNotificationsDependentFieldMissingError.GetFieldDeserializers();
+            }
+            else if(EmailNotificationsInvalidDataTypeError != null)
+            {
+                return EmailNotificationsInvalidDataTypeError.GetFieldDeserializers();
+            }
             else if(EmailNotificationsInvalidModuleError != null)
             {
                 return EmailNotificationsInvalidModuleError.GetFieldDeserializers();
+            }
+            else if(EmailNotificationsMandatoryFieldMissingError != null)
+            {
+                return EmailNotificationsMandatoryFieldMissingError.GetFieldDeserializers();
             }
             else if(InvalidAddressError != null)
             {
@@ -345,10 +353,6 @@ return result;
             else if(InvalidAssociatedToError != null)
             {
                 return InvalidAssociatedToError.GetFieldDeserializers();
-            }
-            else if(InvalidDataTypeError != null)
-            {
-                return InvalidDataTypeError.GetFieldDeserializers();
             }
             else if(InvalidNameError != null)
             {
@@ -369,10 +373,6 @@ return result;
             else if(LockedNotificationEditError != null)
             {
                 return LockedNotificationEditError.GetFieldDeserializers();
-            }
-            else if(MandatoryFieldMissingError != null)
-            {
-                return MandatoryFieldMissingError.GetFieldDeserializers();
             }
             else if(MissingRequiredFieldError != null)
             {
@@ -395,41 +395,41 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (AmbiguityInModuleError == null && BulkEmailCcError == null && DependentFieldMissingError == null && DependentMismatchError == null && EmailNotificationsInvalidModuleError == null && InvalidAddressError == null && InvalidApiNameError == null && InvalidAssociatedToError == null && InvalidDataTypeError == null && InvalidNameError == null && InvalidRecipientsError == null && InvalidResourceIdentifierError == null && InvalidTemplateIdError == null && LockedNotificationEditError == null && MandatoryFieldMissingError == null && MissingRequiredFieldError == null && NameLengthExceededError == null && ResourceIdentifierLengthExceededError == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AmbiguityInModuleError == null && BulkEmailCcError == null && DependentMismatchError == null && EmailNotificationsDependentFieldMissingError == null && EmailNotificationsInvalidDataTypeError == null && EmailNotificationsInvalidModuleError == null && EmailNotificationsMandatoryFieldMissingError == null && InvalidAddressError == null && InvalidApiNameError == null && InvalidAssociatedToError == null && InvalidNameError == null && InvalidRecipientsError == null && InvalidResourceIdentifierError == null && InvalidTemplateIdError == null && LockedNotificationEditError == null && MissingRequiredFieldError == null && NameLengthExceededError == null && ResourceIdentifierLengthExceededError == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
             if (AmbiguityInModuleError != null) selectedUnionBranches++;
             if (BulkEmailCcError != null) selectedUnionBranches++;
-            if (DependentFieldMissingError != null) selectedUnionBranches++;
             if (DependentMismatchError != null) selectedUnionBranches++;
+            if (EmailNotificationsDependentFieldMissingError != null) selectedUnionBranches++;
+            if (EmailNotificationsInvalidDataTypeError != null) selectedUnionBranches++;
             if (EmailNotificationsInvalidModuleError != null) selectedUnionBranches++;
+            if (EmailNotificationsMandatoryFieldMissingError != null) selectedUnionBranches++;
             if (InvalidAddressError != null) selectedUnionBranches++;
             if (InvalidApiNameError != null) selectedUnionBranches++;
             if (InvalidAssociatedToError != null) selectedUnionBranches++;
-            if (InvalidDataTypeError != null) selectedUnionBranches++;
             if (InvalidNameError != null) selectedUnionBranches++;
             if (InvalidRecipientsError != null) selectedUnionBranches++;
             if (InvalidResourceIdentifierError != null) selectedUnionBranches++;
             if (InvalidTemplateIdError != null) selectedUnionBranches++;
             if (LockedNotificationEditError != null) selectedUnionBranches++;
-            if (MandatoryFieldMissingError != null) selectedUnionBranches++;
             if (MissingRequiredFieldError != null) selectedUnionBranches++;
             if (NameLengthExceededError != null) selectedUnionBranches++;
             if (ResourceIdentifierLengthExceededError != null) selectedUnionBranches++;
             if (AmbiguityInModuleError != null && selectedUnionBranches == 1) { if (AmbiguityInModuleError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AmbiguityInModuleError); return; }
             if (BulkEmailCcError != null && selectedUnionBranches == 1) { if (BulkEmailCcError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BulkEmailCcError); return; }
-            if (DependentFieldMissingError != null && selectedUnionBranches == 1) { if (DependentFieldMissingError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DependentFieldMissingError); return; }
             if (DependentMismatchError != null && selectedUnionBranches == 1) { if (DependentMismatchError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DependentMismatchError); return; }
+            if (EmailNotificationsDependentFieldMissingError != null && selectedUnionBranches == 1) { if (EmailNotificationsDependentFieldMissingError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EmailNotificationsDependentFieldMissingError); return; }
+            if (EmailNotificationsInvalidDataTypeError != null && selectedUnionBranches == 1) { if (EmailNotificationsInvalidDataTypeError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EmailNotificationsInvalidDataTypeError); return; }
             if (EmailNotificationsInvalidModuleError != null && selectedUnionBranches == 1) { if (EmailNotificationsInvalidModuleError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EmailNotificationsInvalidModuleError); return; }
+            if (EmailNotificationsMandatoryFieldMissingError != null && selectedUnionBranches == 1) { if (EmailNotificationsMandatoryFieldMissingError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EmailNotificationsMandatoryFieldMissingError); return; }
             if (InvalidAddressError != null && selectedUnionBranches == 1) { if (InvalidAddressError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InvalidAddressError); return; }
             if (InvalidApiNameError != null && selectedUnionBranches == 1) { if (InvalidApiNameError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InvalidApiNameError); return; }
             if (InvalidAssociatedToError != null && selectedUnionBranches == 1) { if (InvalidAssociatedToError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InvalidAssociatedToError); return; }
-            if (InvalidDataTypeError != null && selectedUnionBranches == 1) { if (InvalidDataTypeError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InvalidDataTypeError); return; }
             if (InvalidNameError != null && selectedUnionBranches == 1) { if (InvalidNameError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InvalidNameError); return; }
             if (InvalidRecipientsError != null && selectedUnionBranches == 1) { if (InvalidRecipientsError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InvalidRecipientsError); return; }
             if (InvalidResourceIdentifierError != null && selectedUnionBranches == 1) { if (InvalidResourceIdentifierError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InvalidResourceIdentifierError); return; }
             if (InvalidTemplateIdError != null && selectedUnionBranches == 1) { if (InvalidTemplateIdError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InvalidTemplateIdError); return; }
             if (LockedNotificationEditError != null && selectedUnionBranches == 1) { if (LockedNotificationEditError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LockedNotificationEditError); return; }
-            if (MandatoryFieldMissingError != null && selectedUnionBranches == 1) { if (MandatoryFieldMissingError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MandatoryFieldMissingError); return; }
             if (MissingRequiredFieldError != null && selectedUnionBranches == 1) { if (MissingRequiredFieldError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MissingRequiredFieldError); return; }
             if (NameLengthExceededError != null && selectedUnionBranches == 1) { if (NameLengthExceededError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, NameLengthExceededError); return; }
             if (ResourceIdentifierLengthExceededError != null && selectedUnionBranches == 1) { if (ResourceIdentifierLengthExceededError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ResourceIdentifierLengthExceededError); return; }
@@ -445,20 +445,30 @@ return result;
                 if (BulkEmailCcError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkEmailCcError>(null, BulkEmailCcError);
             }
-            else if(DependentFieldMissingError != null)
-            {
-                if (DependentFieldMissingError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingError>(null, DependentFieldMissingError);
-            }
             else if(DependentMismatchError != null)
             {
                 if (DependentMismatchError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchError>(null, DependentMismatchError);
             }
+            else if(EmailNotificationsDependentFieldMissingError != null)
+            {
+                if (EmailNotificationsDependentFieldMissingError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsDependentFieldMissingError>(null, EmailNotificationsDependentFieldMissingError);
+            }
+            else if(EmailNotificationsInvalidDataTypeError != null)
+            {
+                if (EmailNotificationsInvalidDataTypeError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsInvalidDataTypeError>(null, EmailNotificationsInvalidDataTypeError);
+            }
             else if(EmailNotificationsInvalidModuleError != null)
             {
                 if (EmailNotificationsInvalidModuleError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsInvalidModuleError>(null, EmailNotificationsInvalidModuleError);
+            }
+            else if(EmailNotificationsMandatoryFieldMissingError != null)
+            {
+                if (EmailNotificationsMandatoryFieldMissingError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationsMandatoryFieldMissingError>(null, EmailNotificationsMandatoryFieldMissingError);
             }
             else if(InvalidAddressError != null)
             {
@@ -474,11 +484,6 @@ return result;
             {
                 if (InvalidAssociatedToError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidAssociatedToError>(null, InvalidAssociatedToError);
-            }
-            else if(InvalidDataTypeError != null)
-            {
-                if (InvalidDataTypeError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeError>(null, InvalidDataTypeError);
             }
             else if(InvalidNameError != null)
             {
@@ -504,11 +509,6 @@ return result;
             {
                 if (LockedNotificationEditError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockedNotificationEditError>(null, LockedNotificationEditError);
-            }
-            else if(MandatoryFieldMissingError != null)
-            {
-                if (MandatoryFieldMissingError is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldMissingError>(null, MandatoryFieldMissingError);
             }
             else if(MissingRequiredFieldError != null)
             {

@@ -206,7 +206,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDraftsRequestEmailDraftsItemAttachmentsItem>(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDraftsRequestEmailDraftsItemAttachmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bcc", n => { Bcc = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDraftsRequestEmailDraftsItemBccItem>(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDraftsRequestEmailDraftsItemBccItem.CreateFromDiscriminatorValue)?.AsList(); } },

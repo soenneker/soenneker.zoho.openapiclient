@@ -134,7 +134,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "custom_fields", n => { CustomFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CustomFieldConfiguration>(global::Soenneker.Zoho.OpenApiClient.Models.CustomFieldConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },

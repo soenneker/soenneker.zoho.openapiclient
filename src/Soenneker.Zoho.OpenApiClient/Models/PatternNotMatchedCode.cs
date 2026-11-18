@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the error code identifying the type of pattern mismatch. Possible values: **PATTERN_NOT_MATCHED** - Indicates the query parameter value does not match the expected pattern.</summary>
+    /// <summary>Represents the error code returned when the input value does not match the expected pattern.Possible values:**PATTERN_NOT_MATCHED** - The value provided for the field does not satisfy the required format.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PatternNotMatchedCode
     {

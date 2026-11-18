@@ -86,7 +86,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "enrich_based_on", n => { EnrichBasedOn = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItemEnrichBasedOn>(global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItemEnrichBasedOn.CreateFromDiscriminatorValue); } },
                 { "enriched_data", n => { EnrichedData = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItemEnrichedData>(global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItemEnrichedData.CreateFromDiscriminatorValue); } },

@@ -65,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "decimal_places", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateBaseCurrencyRequestBaseCurrencyFormatDecimalPlaces>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDecimalPlaces = default; _explicitNullProperties?.Remove("decimal_places"); AdditionalData["decimal_places"] = unknown; } else { DecimalPlaces = parsed; AdditionalData.Remove("decimal_places"); } } },
                 { "decimal_separator", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateBaseCurrencyRequestBaseCurrencyFormatDecimalSeparator>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDecimalSeparator = default; _explicitNullProperties?.Remove("decimal_separator"); AdditionalData["decimal_separator"] = unknown; } else { DecimalSeparator = parsed; AdditionalData.Remove("decimal_separator"); } } },

@@ -165,7 +165,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "add_to_existing_account", n => { AddToExistingAccount = n.GetBoolValue(); } },
                 { "add_to_existing_contact", n => { AddToExistingContact = n.GetBoolValue(); } },

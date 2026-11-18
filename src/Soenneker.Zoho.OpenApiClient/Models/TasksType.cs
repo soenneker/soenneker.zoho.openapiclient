@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the type of the action.Possible values:**tasks** - Represents tasks. </summary>
+    /// <summary>Type of the action which needs to be executed. (Required)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TasksType
     {

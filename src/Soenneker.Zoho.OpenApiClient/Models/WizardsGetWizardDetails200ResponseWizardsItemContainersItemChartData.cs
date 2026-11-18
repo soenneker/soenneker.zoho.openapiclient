@@ -28,7 +28,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the color palette applied to the wizard canvas, defining the colors used for visual elements such as button backgrounds.</summary>
+        /// <summary>Represents the color palette applied to the wizard canvas, defining the colors used for visual elements such as button backgrounds. This key is present in the response only if at least one custom color has been chosen for a button on a screen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataColorPalette? ColorPalette { get => _explicitNullValueColorPalette; set { _explicitNullValueColorPalette = value; AdditionalData?.Remove("color_palette"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color_palette"); else _explicitNullProperties?.Remove("color_palette"); } }

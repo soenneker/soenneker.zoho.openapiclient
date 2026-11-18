@@ -81,7 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "inventory_template", n => { InventoryTemplate = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemInventoryDetailsInventoryTemplate>(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemInventoryDetailsInventoryTemplate.CreateFromDiscriminatorValue); } },
                 { "paper_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemInventoryDetailsPaperType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePaperType = default; _explicitNullProperties?.Remove("paper_type"); AdditionalData["paper_type"] = unknown; } else { PaperType = parsed; AdditionalData.Remove("paper_type"); } } },
